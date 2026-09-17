@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 320px;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 15px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #2c3e50;
+      font-size: 18px;
+    }
+
+    .control-group {
+      margin-bottom: 20px;
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type=range] {
+      width: 100%;
+    }
+
+    .status {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .tradeoff-desc {
+      font-size: 11px;
+      color: #e74c3c;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    .stats-box {
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .safe {
+      color: green;
+      font-weight: bold;
+    }
+
+    .danger {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>🛡️ AI Phishing Guard</h2>
+
+  <div class="control-group">
+    <label for="sensitivity">Detection Sensitivity (WP2)</label>
+    <input type="range" id="sensitivity" name="sensitivity" min="0" max="100" value="50">
+    <div id="val-display" style="text-align: right; font-weight: bold;">50%</div>
+    <div id="tradeoff-text" class="tradeoff-desc">Balanced: Medium Latency / Medium Security</div>
+  </div>
+
+  <div class="stats-box">
+    <div class="stat-row">
+      <span>Last Scan:</span>
+      <span id="scan-result">...</span>
+    </div>
+    <div class="stat-row">
+      <span>Latency:</span>
+      <span id="latency-val">...</span>
+    </div>
+    <div class="stat-row">
+      <span>AI Confidence:</span>
+      <span id="confidence-val">...</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
